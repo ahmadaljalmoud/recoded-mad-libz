@@ -159,7 +159,12 @@ getRawStory()
         const input=AddInputs(each);
         let c=AddPosToPreview(each.pos)
         input.addEventListener("input", (e) => {
+          if (input.value === ""){
+            c.innerHTML=`${each.pos}`;
+          }
+          else{
           c.innerHTML=input.value;
+          }
           alarm.classList.add("d-none");
 
         });
